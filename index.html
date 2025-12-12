@@ -36,7 +36,7 @@
     <link rel="icon" type="image/png" href="images/spartamax-favcon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -44,14 +44,8 @@
         .option-box:hover { transform: translateY(-2px); }
         .checkmark-list li {
             position: relative;
-            padding-left: 1.5rem; /* Reduced slightly for mobile */
-            margin-bottom: 0.6rem;
-        }
-        @media (min-width: 768px) {
-            .checkmark-list li {
-                padding-left: 1.75rem;
-                margin-bottom: 0.75rem;
-            }
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
         }
         .checkmark-list li::before {
             content: '✓';
@@ -59,6 +53,7 @@
             left: 0;
             color: #16a34a; /* green-600 */
             font-weight: bold;
+            font-size: 1.1em;
         }
         /* Modal Styles */
         .modal-open { overflow: hidden; }
@@ -67,58 +62,61 @@
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased relative">
 
-    <!-- Top Trust Bar -->
-    <div class="bg-gray-900 text-white text-center py-2 px-2 text-xs md:text-sm font-medium tracking-wide leading-tight">
+    <!-- Top Trust Bar - PADRÃO: Pequeno mas legível (text-sm) -->
+    <div class="bg-gray-900 text-white text-center py-3 px-4 text-sm font-medium tracking-wide leading-tight">
         <span id="trust-bar-text">Trusted by 64,500+ Men Worldwide</span> 
-        <span class="text-yellow-400 inline-block ml-1 md:ml-2 whitespace-nowrap"><i class="fas fa-star"></i> Verified Reviews</span>
+        <span class="text-yellow-400 inline-block ml-2 whitespace-nowrap"><i class="fas fa-star"></i> Verified Reviews</span>
     </div>
 
     <!-- Header / Logo -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 md:py-4 flex justify-center">
-            <img src="images/spartamax-logo.png" alt="Spartamax Logo" class="h-8 md:h-12 w-auto object-contain">
+        <div class="container mx-auto px-4 py-4 flex justify-center">
+            <img src="images/spartamax-logo.png" alt="Spartamax Logo" class="h-10 md:h-14 w-auto object-contain">
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-6 md:py-8 max-w-3xl">
+    <main class="container mx-auto px-4 py-8 max-w-3xl">
         
-        <!-- Main Headline -->
-        <div class="text-center mb-6 md:mb-8">
-            <h1 id="main-headline" class="text-2xl md:text-5xl font-black text-gray-900 leading-tight mb-3 md:mb-4 px-1">
+        <!-- Main Headline - PADRÃO: Grande e Impactante, mas equilibrado -->
+        <div class="text-center mb-10">
+            <h1 id="main-headline" class="text-3xl md:text-5xl font-black text-gray-900 leading-tight mb-6">
                 A Natural, Science-Backed Way to Improve Еrесtiоn Strength, Stаminа and Confidence
             </h1>
-            <p id="main-subhead" class="text-base md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto px-2">
+            <!-- PADRÃO: Corpo de texto principal aumentado para text-lg (Desktop) e text-base (Mobile) -->
+            <p id="main-subhead" class="text-base md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-4">
                 Spartamax™ uses advanced <strong>Spartan Surge™ Technology</strong> to support healthy blood flow, restore your mind-body connection, and naturally boost Libidо — without pills, prescriptions or uncomfortable side effects.
             </p>
-            <p id="main-subhead-2" class="mt-3 md:mt-4 font-bold text-gray-800 uppercase tracking-wider text-xs md:text-sm">
+            <p id="main-subhead-2" class="font-bold text-gray-900 uppercase tracking-wide text-sm md:text-base">
                 Just steady, reliable performance whenever it matters.
             </p>
         </div>
 
         <!-- Product Hero Image Section -->
-        <div class="bg-white rounded-2xl shadow-lg p-5 md:p-8 mb-8 md:mb-10 border border-gray-100 text-center">
-            <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 md:mb-6 uppercase tracking-wide">Spartamax™ Performance Formula</h2>
+        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 mb-12 border border-gray-100 text-center">
+            <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 uppercase tracking-wide">Spartamax™ Performance Formula</h2>
             
-            <div class="relative inline-block group w-full max-w-[240px] md:max-w-[280px]">
+            <div class="relative inline-block group w-full max-w-[260px] md:max-w-[320px]">
                 <div class="absolute inset-0 bg-yellow-400 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
                 <img src="images/spartamax.png" alt="Spartamax Bottle" class="relative z-10 w-full h-auto mx-auto transform transition duration-500 hover:scale-105">
             </div>
 
-            <div class="mt-5 md:mt-6 flex justify-center mb-3 md:mb-4">
-                <img src="images/spartamax-selos.png" alt="Selos de Segurança e Qualidade" class="h-6 md:h-10 w-auto object-contain opacity-90">
+            <div class="mt-8 flex justify-center mb-6">
+                <img src="images/spartamax-selos.png" alt="Selos de Segurança e Qualidade" class="h-8 md:h-12 w-auto object-contain opacity-90">
             </div>
 
-            <p id="img-text" class="text-gray-700 font-medium italic text-sm md:text-base px-2">
+            <!-- PADRÃO: Legenda da imagem alinhada com o corpo do texto -->
+            <p id="img-text" class="text-gray-700 font-medium italic text-base md:text-lg">
                 "From inconsistent, low-energy performance to stronger, more confident Intimасу."
             </p>
         </div>
 
         <!-- How It Works Section -->
-        <div class="mb-8 md:mb-12">
-            <h3 id="how-title" class="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6 text-center px-2">How Spartamax Works — Simple, Safe and Effective</h3>
+        <div class="mb-12">
+            <h3 id="how-title" class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">How Spartamax Works — Simple, Safe and Effective</h3>
             
-            <div class="bg-blue-50 border-l-4 border-blue-600 p-5 md:p-8 rounded-r-lg shadow-sm">
-                <ul class="checkmark-list space-y-2 md:space-y-3 text-base md:text-lg text-gray-700">
+            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 md:p-8 rounded-r-lg shadow-sm">
+                <!-- PADRÃO: Lista com fonte text-base/text-lg para leitura fácil -->
+                <ul class="checkmark-list space-y-3 text-base md:text-lg text-gray-700">
                     <li id="li-1">Supports <strong>nitric oxide levels</strong> for stronger, longer-lasting Еrесtiоns</li>
                     <li id="li-2">Reinforces <strong>neural pathways</strong> for faster Аrоusаl response</li>
                     <li id="li-3">Helps maintain <strong>healthy Tеstоstеrоnе levels</strong> for energy and drive</li>
@@ -126,75 +124,77 @@
                     <li id="li-5"><strong>Daily chewable gummy</strong> — no pills, no discomfort</li>
                     <li id="li-6">Suitable for men in their 30s, 40s, 50s, 60s and beyond</li>
                 </ul>
-                <div id="how-footer" class="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-blue-100 text-xs md:text-sm text-blue-800 font-medium flex items-start">
-                    <i class="fas fa-bolt text-yellow-500 mt-0.5 md:mt-1 mr-2 text-base md:text-lg flex-shrink-0"></i>
+                <div id="how-footer" class="mt-6 pt-6 border-t border-blue-100 text-sm md:text-base text-blue-900 font-medium flex items-start">
+                    <i class="fas fa-bolt text-yellow-500 mt-1 mr-3 text-lg flex-shrink-0"></i>
                     <span>Powered by Spartan Surge™ Technology: natural ingredients + modern performance science.</span>
                 </div>
             </div>
         </div>
 
         <!-- THE SPLIT OPTIONS -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-6 mb-8 md:mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
 
             <!-- OPTION 1 -->
             <div class="option-box bg-white border-2 border-green-500 rounded-xl shadow-xl overflow-hidden relative flex flex-col">
-                <div id="opt1-badge" class="bg-green-600 text-white text-center py-2 md:py-3 font-bold uppercase tracking-wider text-xs md:text-sm">
+                <div id="opt1-badge" class="bg-green-600 text-white text-center py-3 font-bold uppercase tracking-wider text-sm">
                     Most Popular Choice
                 </div>
-                <div class="p-5 md:p-6 flex-1 flex flex-col">
-                    <h3 class="text-lg md:text-xl font-black text-gray-900 mb-1 md:mb-2 text-center md:text-left">OPTION 1</h3>
-                    <p id="opt1-discount" class="text-xl md:text-2xl font-bold text-green-600 mb-2 md:mb-4 text-center md:text-left">Get Up to 38% OFF Today</p>
-                    <p id="opt1-sub" class="text-gray-600 text-sm mb-4 md:mb-6 font-medium text-center md:text-left">
+                <div class="p-6 md:p-8 flex-1 flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-black text-gray-900 mb-2 text-center md:text-left">OPTION 1</h3>
+                    <p id="opt1-discount" class="text-2xl md:text-3xl font-bold text-green-600 mb-4 text-center md:text-left">Get Up to 38% OFF Today</p>
+                    <p id="opt1-sub" class="text-gray-700 text-base font-semibold mb-4 text-center md:text-left">
                         Go straight to secure checkout.
                     </p>
                     
-                    <p id="opt1-desc" class="text-gray-500 text-sm mb-4 md:mb-6 flex-1 text-center md:text-left">
+                    <!-- PADRÃO: Descrições em text-base (16px) -->
+                    <p id="opt1-desc" class="text-gray-600 text-base mb-6 flex-1 text-center md:text-left leading-relaxed">
                         Ideal for customers who already trust Spartamax™ or want to secure today’s limited-time discount before stock runs out.
                     </p>
 
-                    <ul class="text-xs text-gray-500 space-y-2 mb-4 md:mb-6 pl-2 md:pl-0">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 flex-shrink-0"></i> <span id="chk-1">Discount automatically applied</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 flex-shrink-0"></i> <span id="chk-2">Fast, encrypted checkout</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 flex-shrink-0"></i> <span id="chk-3">Ships from local, trusted warehouses</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2 flex-shrink-0"></i> <span id="chk-4">Discreet, privacy-safe packaging</span></li>
-                        <li class="flex items-center"><i class="fas fa-exclamation-circle text-red-500 mr-2 flex-shrink-0"></i> <span id="chk-5">Limited stock due to high demand</span></li>
+                    <ul class="text-sm md:text-base text-gray-600 space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 flex-shrink-0"></i> <span id="chk-1">Discount automatically applied</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 flex-shrink-0"></i> <span id="chk-2">Fast, encrypted checkout</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 flex-shrink-0"></i> <span id="chk-3">Ships from local, trusted warehouses</span></li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 flex-shrink-0"></i> <span id="chk-4">Discreet, privacy-safe packaging</span></li>
+                        <li class="flex items-center"><i class="fas fa-exclamation-circle text-red-500 mr-3 flex-shrink-0"></i> <span id="chk-5">Limited stock due to high demand</span></li>
                     </ul>
 
-                    <a href="https://hop.clickbank.net/?affiliate=vend02&vendor=spartamax&tid=&pid=113#buyNow" class="block w-full bg-green-500 hover:bg-green-600 text-white font-black py-3 md:py-4 px-4 rounded-lg shadow-md transition-colors text-base md:text-lg leading-tight uppercase transform hover:scale-[1.02] duration-200 text-center active:scale-95 touch-manipulation">
+                    <!-- PADRÃO: Botão grande (text-lg/xl) -->
+                    <a href="https://hop.clickbank.net/?affiliate=vend02&vendor=spartamax&tid=&pid=113#buyNow" class="block w-full bg-green-500 hover:bg-green-600 text-white font-black py-4 px-6 rounded-lg shadow-lg transition-all text-lg md:text-xl leading-snug uppercase transform hover:scale-[1.02] active:scale-95 text-center">
                         <span id="btn-1-text">YES, I WANT THE <br><span class="text-yellow-100">UP TO 38% OFF DEAL</span></span>
                     </a>
                     
-                    <div class="mt-3 md:mt-4 flex justify-center">
-                        <img src="images/spartamax-selos.png" alt="Secure Checkout" class="h-5 md:h-6 opacity-70">
+                    <div class="mt-4 flex justify-center">
+                        <img src="images/spartamax-selos.png" alt="Secure Checkout" class="h-6 opacity-70">
                     </div>
                 </div>
             </div>
 
             <!-- OPTION 2 -->
             <div class="option-box bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col">
-                <div id="opt2-badge" class="bg-gray-100 text-gray-600 text-center py-2 md:py-3 font-bold uppercase tracking-wider text-xs md:text-sm">
+                <div id="opt2-badge" class="bg-gray-100 text-gray-600 text-center py-3 font-bold uppercase tracking-wider text-sm">
                     Need more info?
                 </div>
-                <div class="p-5 md:p-6 flex-1 flex flex-col">
-                    <h3 class="text-lg md:text-xl font-black text-gray-900 mb-1 md:mb-2 text-center md:text-left">OPTION 2</h3>
-                    <p id="opt2-title" class="text-xl md:text-2xl font-bold text-gray-700 mb-2 md:mb-4 text-center md:text-left">Learn More Before Ordering</p>
-                    <p id="opt2-sub" class="text-gray-600 text-sm mb-4 md:mb-6 font-medium text-center md:text-left">
+                <div class="p-6 md:p-8 flex-1 flex flex-col">
+                    <h3 class="text-xl md:text-2xl font-black text-gray-900 mb-2 text-center md:text-left">OPTION 2</h3>
+                    <p id="opt2-title" class="text-2xl md:text-3xl font-bold text-gray-700 mb-4 text-center md:text-left">Learn More Before Ordering</p>
+                    <p id="opt2-sub" class="text-gray-700 text-base font-semibold mb-4 text-center md:text-left">
                         Prefer to understand everything first? View the complete details.
                     </p>
                     
-                    <ul class="text-xs text-gray-500 space-y-2 mb-4 md:mb-6 flex-1 pl-2 md:pl-0">
-                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[6px] mr-2 flex-shrink-0"></i> <span id="li-opt2-1">How Spartan Surge™ Technology works</span></li>
-                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[6px] mr-2 flex-shrink-0"></i> <span id="li-opt2-2">Ingredient breakdowns and scientific insights</span></li>
-                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[6px] mr-2 flex-shrink-0"></i> <span id="li-opt2-3">Real user experiences and verified reviews</span></li>
-                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[6px] mr-2 flex-shrink-0"></i> <span id="li-opt2-4">Our 365-Day Money-Back Guarantee</span></li>
+                    <ul class="text-sm md:text-base text-gray-600 space-y-3 mb-8 flex-1">
+                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[8px] mr-3 flex-shrink-0"></i> <span id="li-opt2-1">How Spartan Surge™ Technology works</span></li>
+                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[8px] mr-3 flex-shrink-0"></i> <span id="li-opt2-2">Ingredient breakdowns and scientific insights</span></li>
+                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[8px] mr-3 flex-shrink-0"></i> <span id="li-opt2-3">Real user experiences and verified reviews</span></li>
+                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[8px] mr-3 flex-shrink-0"></i> <span id="li-opt2-4">Our 365-Day Money-Back Guarantee</span></li>
                     </ul>
 
-                    <a href="https://hop.clickbank.net/?affiliate=vend02&vendor=spartamax&tid=&pid=113" class="block w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 md:py-4 px-4 rounded-lg shadow-md transition-colors text-sm uppercase tracking-wide text-center active:scale-95 touch-manipulation">
+                    <a href="https://hop.clickbank.net/?affiliate=vend02&vendor=spartamax&tid=&pid=113" class="block w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition-all text-base md:text-lg uppercase tracking-wide text-center active:scale-95">
                         <span id="btn-2-text">SHOW ME THE COMPLETE<br>PRODUCT PAGE</span>
                     </a>
                     
-                    <div class="mt-3 md:mt-4 flex justify-center">
-                        <img src="images/spartamax-selos.png" alt="Secure Checkout" class="h-5 md:h-6 opacity-70">
+                    <div class="mt-4 flex justify-center">
+                        <img src="images/spartamax-selos.png" alt="Secure Checkout" class="h-6 opacity-70">
                     </div>
                 </div>
             </div>
@@ -205,25 +205,25 @@
         <div class="bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden mb-8">
             <div class="flex flex-col md:flex-row items-center md:items-stretch">
                 <!-- Visual Side -->
-                <div class="w-full md:w-5/12 bg-slate-900 p-6 md:p-8 flex flex-col justify-center items-center relative overflow-hidden">
+                <div class="w-full md:w-5/12 bg-slate-900 p-8 flex flex-col justify-center items-center relative overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-black opacity-50"></div>
-                    <!-- Image size adjusted for mobile -->
-                    <img src="images/365day.png" alt="365 Day Guarantee" class="relative z-10 w-32 md:w-48 object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                    <img src="images/365day.png" alt="365 Day Guarantee" class="relative z-10 w-40 md:w-52 object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 </div>
                 
                 <!-- Text Side -->
-                <div class="w-full md:w-7/12 p-6 md:p-8 flex flex-col justify-center text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start mb-2 text-yellow-500">
+                <div class="w-full md:w-7/12 p-8 flex flex-col justify-center text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start mb-3 text-yellow-500 text-lg">
                         <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
                     </div>
-                    <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">100% Satisfaction</h4>
-                    <h3 id="guarantee-title" class="text-xl md:text-2xl font-black text-gray-900 mb-3 md:mb-4 font-serif italic leading-tight">365-Day Money Back Guarantee</h3>
+                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">100% Satisfaction</h4>
+                    <h3 id="guarantee-title" class="text-2xl md:text-3xl font-black text-gray-900 mb-4 font-serif italic leading-tight">365-Day Money Back Guarantee</h3>
                     
-                    <p id="guarantee-text" class="text-gray-600 mb-4 text-sm leading-relaxed">
+                    <!-- PADRÃO: Texto de garantia legível (text-base) -->
+                    <p id="guarantee-text" class="text-gray-600 mb-6 text-base leading-relaxed">
                         Remember, your order today is covered by an <span class="font-bold text-gray-900">iron-clad 365 Day Money Back Guarantee</span>. If Spartamax doesn't fully meet your expectations, email us at any time over the next 12 months and we'll refund <span class="underline decoration-yellow-400 decoration-2 underline-offset-2">every single cent</span>.
                     </p>
                     
-                    <div id="guarantee-note" class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded-r text-xs md:text-sm text-blue-900 font-medium text-left">
+                    <div id="guarantee-note" class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r text-sm md:text-base text-blue-900 font-medium text-left">
                         This means you have <span class="font-bold">one full year</span> to put Spartamax to the test and see just how far this breakthrough takes you.
                     </div>
                 </div>
@@ -233,18 +233,18 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-8 md:py-10 mt-6 md:mt-8">
+    <footer class="bg-white border-t border-gray-200 py-10 mt-10">
         <div class="container mx-auto px-4 text-center">
             
-            <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-6 text-xs md:text-sm text-gray-600">
-                <button onclick="openModal('privacy')" class="hover:text-gray-900 underline cursor-pointer p-2">Privacy Policy</button>
-                <button onclick="openModal('terms')" class="hover:text-gray-900 underline cursor-pointer p-2">Terms of Service</button>
-                <button onclick="openModal('shipping')" class="hover:text-gray-900 underline cursor-pointer p-2">Shipping Policy</button>
-                <button onclick="openModal('shipping')" class="hover:text-gray-900 underline cursor-pointer p-2">Refund Policy</button>
-                <button onclick="openModal('contact')" class="hover:text-gray-900 underline cursor-pointer p-2">Contact Us</button>
+            <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm text-gray-600 font-medium">
+                <button onclick="openModal('privacy')" class="hover:text-gray-900 underline cursor-pointer px-2">Privacy Policy</button>
+                <button onclick="openModal('terms')" class="hover:text-gray-900 underline cursor-pointer px-2">Terms of Service</button>
+                <button onclick="openModal('shipping')" class="hover:text-gray-900 underline cursor-pointer px-2">Shipping Policy</button>
+                <button onclick="openModal('shipping')" class="hover:text-gray-900 underline cursor-pointer px-2">Refund Policy</button>
+                <button onclick="openModal('contact')" class="hover:text-gray-900 underline cursor-pointer px-2">Contact Us</button>
             </div>
 
-            <p class="text-gray-400 text-xs md:text-sm">
+            <p class="text-gray-400 text-sm">
                 © 2024–2025 Spartamax™. All Rights Reserved.
             </p>
         </div>
