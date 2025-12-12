@@ -36,25 +36,29 @@
     <link rel="icon" type="image/png" href="images/spartamax-favcon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .option-box { transition: all 0.3s ease; }
-        .option-box:hover { transform: translateY(-2px); }
+        .option-box { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .option-box:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
         .checkmark-list li {
             position: relative;
-            padding-left: 1.75rem;
-            margin-bottom: 0.75rem;
+            padding-left: 2rem;
+            margin-bottom: 0.85rem;
+            line-height: 1.6;
         }
         .checkmark-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
+            top: 0;
             color: #16a34a; /* green-600 */
-            font-weight: bold;
-            font-size: 1.1em;
+            font-weight: 900;
+            font-size: 1.2em;
         }
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
         /* Modal Styles */
         .modal-open { overflow: hidden; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -63,15 +67,15 @@
 <body class="bg-gray-50 text-gray-800 antialiased relative">
 
     <!-- Top Trust Bar -->
-    <div class="bg-gray-900 text-white text-center py-3 px-4 text-sm font-medium tracking-wide leading-tight">
+    <div class="bg-slate-900 text-white text-center py-3 px-4 text-xs md:text-sm font-semibold tracking-wide leading-tight shadow-md z-[60] relative">
         <span id="trust-bar-text">Trusted by 64,500+ Men Worldwide</span> 
         <span class="text-yellow-400 inline-block ml-2 whitespace-nowrap"><i class="fas fa-star"></i> Verified Reviews</span>
     </div>
 
-    <!-- Header / Logo -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-center">
-            <img src="images/spartamax-logo.png" alt="Spartamax Logo" class="h-10 md:h-14 w-auto object-contain">
+    <!-- Header / Logo (Sticky with blur) -->
+    <header class="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 md:py-4 flex justify-center">
+            <img src="images/spartamax-logo.png" alt="Spartamax Logo" class="h-9 md:h-12 w-auto object-contain hover:opacity-90 transition-opacity">
         </div>
     </header>
 
@@ -80,46 +84,49 @@
         <!-- Main Headline -->
         <div class="text-center mb-10">
             <!-- Mobile: text-3xl / Desktop: text-5xl -->
-            <h1 id="main-headline" class="text-3xl md:text-5xl font-black text-gray-900 leading-tight mb-6">
+            <h1 id="main-headline" class="text-3xl md:text-5xl font-black text-slate-900 leading-[1.15] mb-5 tracking-tight">
                 A Natural, Science-Backed Way to Improve Еrесtiоn Strength, Stаminа and Confidence
             </h1>
             <!-- PADRÃO BODY: text-base (16px) no mobile -->
-            <p id="main-subhead" class="text-base md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-4">
+            <p id="main-subhead" class="text-base md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto mb-5 font-medium">
                 Spartamax™ uses advanced <strong>Spartan Surge™ Technology</strong> to support healthy blood flow, restore your mind-body connection, and naturally boost Libidо — without pills, prescriptions or uncomfortable side effects.
             </p>
-            <p id="main-subhead-2" class="font-bold text-gray-900 uppercase tracking-wide text-sm md:text-base">
+            <p id="main-subhead-2" class="font-bold text-slate-800 uppercase tracking-widest text-xs md:text-sm border-b-2 border-yellow-400 inline-block pb-1">
                 Just steady, reliable performance whenever it matters.
             </p>
         </div>
 
         <!-- Product Hero Image Section -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10 mb-12 border border-gray-100 text-center">
-            <!-- PADRÃO TÍTULO SESSÃO: text-2xl no mobile -->
-            <h2 class="text-2xl md:text-2xl font-bold text-gray-900 mb-6 uppercase tracking-wide">Spartamax™ Performance Formula</h2>
+        <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-6 md:p-10 mb-12 border border-slate-100 text-center overflow-hidden relative">
+            <!-- Decorative background blob -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-yellow-100/50 rounded-full blur-3xl -z-10"></div>
+
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-8 uppercase tracking-wide">Spartamax™ Performance Formula</h2>
             
-            <div class="relative inline-block group w-full max-w-[260px] md:max-w-[320px]">
-                <div class="absolute inset-0 bg-yellow-400 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
-                <img src="images/spartamax.png" alt="Spartamax Bottle" class="relative z-10 w-full h-auto mx-auto transform transition duration-500 hover:scale-105">
+            <div class="relative inline-block group w-full max-w-[260px] md:max-w-[320px] mb-2">
+                <div class="absolute inset-0 bg-yellow-400 rounded-full blur-[60px] opacity-20 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <img src="images/spartamax.png" alt="Spartamax Bottle" class="relative z-10 w-full h-auto mx-auto transform transition duration-500 hover:scale-[1.03] drop-shadow-2xl">
             </div>
 
-            <div class="mt-8 flex justify-center mb-6">
-                <img src="images/spartamax-selos.png" alt="Selos de Segurança e Qualidade" class="h-8 md:h-12 w-auto object-contain opacity-90">
+            <div class="flex justify-center mb-6 mt-4">
+                <img src="images/spartamax-selos.png" alt="Selos de Segurança e Qualidade" class="h-8 md:h-12 w-auto object-contain opacity-90 grayscale hover:grayscale-0 transition-all duration-300">
             </div>
 
             <!-- PADRÃO BODY: text-base -->
-            <p id="img-text" class="text-gray-700 font-medium italic text-base md:text-lg">
+            <p id="img-text" class="text-slate-600 font-medium italic text-base md:text-lg bg-slate-50 inline-block px-4 py-2 rounded-lg border border-slate-100">
                 "From inconsistent, low-energy performance to stronger, more confident Intimасу."
             </p>
         </div>
 
         <!-- How It Works Section -->
-        <div class="mb-12">
+        <div class="mb-14">
             <!-- PADRÃO TÍTULO SESSÃO: text-2xl no mobile -->
-            <h3 id="how-title" class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">How Spartamax Works — Simple, Safe and Effective</h3>
+            <h3 id="how-title" class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center leading-tight">How Spartamax Works — <br class="md:hidden"><span class="text-green-600">Simple, Safe and Effective</span></h3>
             
-            <div class="bg-blue-50 border-l-4 border-blue-600 p-6 md:p-8 rounded-r-lg shadow-sm">
+            <div class="bg-white border border-slate-200 rounded-2xl shadow-lg p-6 md:p-10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-1.5 h-full bg-green-500"></div>
                 <!-- PADRÃO LISTA: text-base no mobile (igualado com as opções abaixo) -->
-                <ul class="checkmark-list space-y-3 text-base md:text-lg text-gray-700">
+                <ul class="checkmark-list space-y-4 text-base md:text-lg text-slate-700 font-medium">
                     <li id="li-1">Supports <strong>nitric oxide levels</strong> for stronger, longer-lasting Еrесtiоns</li>
                     <li id="li-2">Reinforces <strong>neural pathways</strong> for faster Аrоusаl response</li>
                     <li id="li-3">Helps maintain <strong>healthy Tеstоstеrоnе levels</strong> for energy and drive</li>
@@ -127,80 +134,80 @@
                     <li id="li-5"><strong>Daily chewable gummy</strong> — no pills, no discomfort</li>
                     <li id="li-6">Suitable for men in their 30s, 40s, 50s, 60s and beyond</li>
                 </ul>
-                <div id="how-footer" class="mt-6 pt-6 border-t border-blue-100 text-sm md:text-base text-blue-900 font-medium flex items-start">
-                    <i class="fas fa-bolt text-yellow-500 mt-1 mr-3 text-lg flex-shrink-0"></i>
+                <div id="how-footer" class="mt-8 pt-6 border-t border-slate-100 text-sm md:text-base text-slate-500 font-medium flex items-center bg-slate-50 -mx-6 -mb-6 md:-mx-10 md:-mb-10 p-4 md:p-6">
+                    <i class="fas fa-bolt text-yellow-500 mr-3 text-xl flex-shrink-0 bg-yellow-100 p-2 rounded-full"></i>
                     <span>Powered by Spartan Surge™ Technology: natural ingredients + modern performance science.</span>
                 </div>
             </div>
         </div>
 
         <!-- THE SPLIT OPTIONS -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
 
-            <!-- OPTION 1 -->
-            <div class="option-box bg-white border-2 border-green-500 rounded-xl shadow-xl overflow-hidden relative flex flex-col">
-                <div id="opt1-badge" class="bg-green-600 text-white text-center py-3 font-bold uppercase tracking-wider text-sm">
+            <!-- OPTION 1 (Highlighted) -->
+            <div class="option-box bg-white border-2 border-green-500 rounded-2xl shadow-xl shadow-green-900/5 overflow-hidden relative flex flex-col transform md:scale-105 z-10">
+                <div id="opt1-badge" class="bg-green-600 text-white text-center py-3 font-bold uppercase tracking-wider text-sm shadow-md">
                     Most Popular Choice
                 </div>
                 <div class="p-6 md:p-8 flex-1 flex flex-col">
-                    <h3 class="text-xl md:text-2xl font-black text-gray-900 mb-2 text-center md:text-left">OPTION 1</h3>
-                    <p id="opt1-discount" class="text-2xl md:text-3xl font-bold text-green-600 mb-4 text-center md:text-left">Get Up to 38% OFF Today</p>
-                    <p id="opt1-sub" class="text-gray-700 text-base font-semibold mb-4 text-center md:text-left">
+                    <h3 class="text-sm font-bold text-green-600 mb-1 uppercase tracking-wider">OPTION 1</h3>
+                    <p id="opt1-discount" class="text-2xl md:text-3xl font-black text-slate-900 mb-4 leading-tight">Get Up to <span class="text-green-600">38% OFF</span> Today</p>
+                    <p id="opt1-sub" class="text-slate-600 text-base font-medium mb-4 pb-4 border-b border-dashed border-slate-200">
                         Go straight to secure checkout.
                     </p>
                     
                     <!-- PADRÃO BODY: text-base -->
-                    <p id="opt1-desc" class="text-gray-600 text-base mb-6 flex-1 text-center md:text-left leading-relaxed">
+                    <p id="opt1-desc" class="text-slate-500 text-sm md:text-base mb-6 flex-1 leading-relaxed">
                         Ideal for customers who already trust Spartamax™ or want to secure today’s limited-time discount before stock runs out.
                     </p>
 
                     <!-- PADRÃO LISTA: Aumentado de text-sm para text-base no mobile para consistência -->
-                    <ul class="text-base text-gray-600 space-y-3 mb-8">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 flex-shrink-0"></i> <span id="chk-1">Discount automatically applied</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 flex-shrink-0"></i> <span id="chk-2">Fast, encrypted checkout</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 flex-shrink-0"></i> <span id="chk-3">Ships from local, trusted warehouses</span></li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-3 flex-shrink-0"></i> <span id="chk-4">Discreet, privacy-safe packaging</span></li>
-                        <li class="flex items-center"><i class="fas fa-exclamation-circle text-red-500 mr-3 flex-shrink-0"></i> <span id="chk-5">Limited stock due to high demand</span></li>
+                    <ul class="text-sm md:text-base text-slate-700 space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3 flex-shrink-0 text-lg"></i> <span id="chk-1">Discount automatically applied</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3 flex-shrink-0 text-lg"></i> <span id="chk-2">Fast, encrypted checkout</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3 flex-shrink-0 text-lg"></i> <span id="chk-3">Ships from local, trusted warehouses</span></li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3 flex-shrink-0 text-lg"></i> <span id="chk-4">Discreet, privacy-safe packaging</span></li>
+                        <li class="flex items-center font-medium text-red-600"><i class="fas fa-fire mr-3 flex-shrink-0 text-lg"></i> <span id="chk-5">Limited stock due to high demand</span></li>
                     </ul>
 
                     <!-- PADRÃO BOTÃO: text-lg no mobile para toque fácil -->
-                    <a href="https://hop.clickbank.net/?affiliate=vend02&vendor=spartamax&tid=&pid=113#buyNow" class="block w-full bg-green-500 hover:bg-green-600 text-white font-black py-4 px-6 rounded-lg shadow-lg transition-all text-lg md:text-xl leading-snug uppercase transform hover:scale-[1.02] active:scale-95 text-center">
-                        <span id="btn-1-text">YES, I WANT THE <br><span class="text-yellow-100">UP TO 38% OFF DEAL</span></span>
+                    <a href="https://hop.clickbank.net/?affiliate=vend02&vendor=spartamax&tid=&pid=113#buyNow" class="block w-full bg-green-600 hover:bg-green-700 text-white font-black py-4 px-6 rounded-xl shadow-lg shadow-green-600/30 transition-all text-lg md:text-xl leading-snug uppercase transform active:scale-95 text-center">
+                        <span id="btn-1-text">YES, I WANT THE <br><span class="text-green-100">UP TO 38% OFF DEAL</span></span>
                     </a>
                     
-                    <div class="mt-4 flex justify-center">
-                        <img src="images/spartamax-selos.png" alt="Secure Checkout" class="h-6 opacity-70">
+                    <div class="mt-5 flex justify-center opacity-70 grayscale hover:grayscale-0 transition-all">
+                        <img src="images/spartamax-selos.png" alt="Secure Checkout" class="h-6">
                     </div>
                 </div>
             </div>
 
             <!-- OPTION 2 -->
-            <div class="option-box bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden flex flex-col">
-                <div id="opt2-badge" class="bg-gray-100 text-gray-600 text-center py-3 font-bold uppercase tracking-wider text-sm">
+            <div class="option-box bg-white border border-slate-200 rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                <div id="opt2-badge" class="bg-slate-100 text-slate-500 text-center py-3 font-bold uppercase tracking-wider text-sm">
                     Need more info?
                 </div>
                 <div class="p-6 md:p-8 flex-1 flex flex-col">
-                    <h3 class="text-xl md:text-2xl font-black text-gray-900 mb-2 text-center md:text-left">OPTION 2</h3>
-                    <p id="opt2-title" class="text-2xl md:text-3xl font-bold text-gray-700 mb-4 text-center md:text-left">Learn More Before Ordering</p>
-                    <p id="opt2-sub" class="text-gray-700 text-base font-semibold mb-4 text-center md:text-left">
+                    <h3 class="text-sm font-bold text-slate-400 mb-1 uppercase tracking-wider">OPTION 2</h3>
+                    <p id="opt2-title" class="text-2xl md:text-3xl font-black text-slate-800 mb-4 leading-tight">Learn More Before Ordering</p>
+                    <p id="opt2-sub" class="text-slate-600 text-base font-medium mb-4 pb-4 border-b border-dashed border-slate-200">
                         Prefer to understand everything first? View the complete details.
                     </p>
                     
                     <!-- PADRÃO LISTA: Aumentado de text-sm para text-base no mobile -->
-                    <ul class="text-base text-gray-600 space-y-3 mb-8 flex-1">
-                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[8px] mr-3 flex-shrink-0"></i> <span id="li-opt2-1">How Spartan Surge™ Technology works</span></li>
-                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[8px] mr-3 flex-shrink-0"></i> <span id="li-opt2-2">Ingredient breakdowns and scientific insights</span></li>
-                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[8px] mr-3 flex-shrink-0"></i> <span id="li-opt2-3">Real user experiences and verified reviews</span></li>
-                        <li class="flex items-center"><i class="fas fa-circle text-gray-300 text-[8px] mr-3 flex-shrink-0"></i> <span id="li-opt2-4">Our 365-Day Money-Back Guarantee</span></li>
+                    <ul class="text-sm md:text-base text-slate-600 space-y-3 mb-8 flex-1">
+                        <li class="flex items-center"><i class="fas fa-chevron-right text-slate-300 text-xs mr-3 flex-shrink-0"></i> <span id="li-opt2-1">How Spartan Surge™ Technology works</span></li>
+                        <li class="flex items-center"><i class="fas fa-chevron-right text-slate-300 text-xs mr-3 flex-shrink-0"></i> <span id="li-opt2-2">Ingredient breakdowns and scientific insights</span></li>
+                        <li class="flex items-center"><i class="fas fa-chevron-right text-slate-300 text-xs mr-3 flex-shrink-0"></i> <span id="li-opt2-3">Real user experiences and verified reviews</span></li>
+                        <li class="flex items-center"><i class="fas fa-chevron-right text-slate-300 text-xs mr-3 flex-shrink-0"></i> <span id="li-opt2-4">Our 365-Day Money-Back Guarantee</span></li>
                     </ul>
 
                     <!-- PADRÃO BOTÃO: Aumentado para text-lg para igualar com o Botão 1 -->
-                    <a href="https://hop.clickbank.net/?affiliate=vend02&vendor=spartamax&tid=&pid=113" class="block w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition-all text-lg md:text-xl uppercase tracking-wide text-center active:scale-95">
+                    <a href="https://hop.clickbank.net/?affiliate=vend02&vendor=spartamax&tid=&pid=113" class="block w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-4 px-6 rounded-xl shadow-lg transition-all text-base md:text-lg uppercase tracking-wide text-center active:scale-95 border border-slate-700">
                         <span id="btn-2-text">SHOW ME THE COMPLETE<br>PRODUCT PAGE</span>
                     </a>
                     
-                    <div class="mt-4 flex justify-center">
-                        <img src="images/spartamax-selos.png" alt="Secure Checkout" class="h-6 opacity-70">
+                    <div class="mt-5 flex justify-center opacity-50 grayscale">
+                        <img src="images/spartamax-selos.png" alt="Secure Checkout" class="h-6">
                     </div>
                 </div>
             </div>
@@ -208,30 +215,33 @@
         </div>
 
         <!-- GUARANTEE SECTION -->
-        <div class="bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden mb-8">
+        <div class="bg-white border border-slate-200 rounded-3xl shadow-xl overflow-hidden mb-12">
             <div class="flex flex-col md:flex-row items-center md:items-stretch">
                 <!-- Visual Side -->
                 <div class="w-full md:w-5/12 bg-slate-900 p-8 flex flex-col justify-center items-center relative overflow-hidden">
-                    <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-black opacity-50"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-black opacity-80"></div>
+                    <!-- Radial pattern overlay -->
+                    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                    
                     <img src="images/365day.png" alt="365 Day Guarantee" class="relative z-10 w-40 md:w-52 object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500">
                 </div>
                 
                 <!-- Text Side -->
-                <div class="w-full md:w-7/12 p-8 flex flex-col justify-center text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start mb-3 text-yellow-500 text-lg">
-                        <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
+                <div class="w-full md:w-7/12 p-8 md:p-10 flex flex-col justify-center text-center md:text-left bg-gradient-to-br from-white to-slate-50">
+                    <div class="flex items-center justify-center md:justify-start mb-4 text-yellow-400 text-lg space-x-1">
+                        <i class="fas fa-star drop-shadow-sm"></i><i class="fas fa-star drop-shadow-sm"></i><i class="fas fa-star drop-shadow-sm"></i><i class="fas fa-star drop-shadow-sm"></i><i class="fas fa-star drop-shadow-sm"></i>
                     </div>
-                    <h4 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">100% Satisfaction</h4>
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] mb-2">Risk-Free Trial</h4>
                     <!-- PADRÃO TÍTULO SESSÃO: text-2xl no mobile -->
-                    <h3 id="guarantee-title" class="text-2xl md:text-3xl font-black text-gray-900 mb-4 font-serif italic leading-tight">365-Day Money Back Guarantee</h3>
+                    <h3 id="guarantee-title" class="text-2xl md:text-4xl font-black text-slate-900 mb-5 font-serif italic leading-tight">365-Day Money Back Guarantee</h3>
                     
                     <!-- PADRÃO BODY: text-base -->
-                    <p id="guarantee-text" class="text-gray-600 mb-6 text-base leading-relaxed">
-                        Remember, your order today is covered by an <span class="font-bold text-gray-900">iron-clad 365 Day Money Back Guarantee</span>. If Spartamax doesn't fully meet your expectations, email us at any time over the next 12 months and we'll refund <span class="underline decoration-yellow-400 decoration-2 underline-offset-2">every single cent</span>.
+                    <p id="guarantee-text" class="text-slate-600 mb-6 text-base leading-relaxed">
+                        Remember, your order today is covered by an <span class="font-bold text-slate-900 bg-yellow-100 px-1">iron-clad 365 Day Money Back Guarantee</span>. If Spartamax doesn't fully meet your expectations, email us at any time over the next 12 months and we'll refund <span class="underline decoration-yellow-400 decoration-2 underline-offset-2 font-semibold">every single cent</span>.
                     </p>
                     
-                    <div id="guarantee-note" class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r text-sm md:text-base text-blue-900 font-medium text-left">
-                        This means you have <span class="font-bold">one full year</span> to put Spartamax to the test and see just how far this breakthrough takes you.
+                    <div id="guarantee-note" class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg text-sm md:text-base text-blue-900 font-medium text-left shadow-sm">
+                        <i class="fas fa-info-circle mr-2"></i> This means you have <span class="font-bold">one full year</span> to put Spartamax to the test and see just how far this breakthrough takes you.
                     </div>
                 </div>
             </div>
@@ -240,18 +250,18 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-10 mt-10">
+    <footer class="bg-white border-t border-slate-200 py-12 mt-12">
         <div class="container mx-auto px-4 text-center">
             
-            <div class="flex flex-wrap justify-center gap-6 mb-6 text-sm text-gray-600 font-medium">
-                <button onclick="openModal('privacy')" class="hover:text-gray-900 underline cursor-pointer px-2">Privacy Policy</button>
-                <button onclick="openModal('terms')" class="hover:text-gray-900 underline cursor-pointer px-2">Terms of Service</button>
-                <button onclick="openModal('shipping')" class="hover:text-gray-900 underline cursor-pointer px-2">Shipping Policy</button>
-                <button onclick="openModal('shipping')" class="hover:text-gray-900 underline cursor-pointer px-2">Refund Policy</button>
-                <button onclick="openModal('contact')" class="hover:text-gray-900 underline cursor-pointer px-2">Contact Us</button>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8 text-sm text-slate-500 font-medium">
+                <button onclick="openModal('privacy')" class="hover:text-slate-900 hover:underline transition-colors px-2">Privacy Policy</button>
+                <button onclick="openModal('terms')" class="hover:text-slate-900 hover:underline transition-colors px-2">Terms of Service</button>
+                <button onclick="openModal('shipping')" class="hover:text-slate-900 hover:underline transition-colors px-2">Shipping Policy</button>
+                <button onclick="openModal('shipping')" class="hover:text-slate-900 hover:underline transition-colors px-2">Refund Policy</button>
+                <button onclick="openModal('contact')" class="hover:text-slate-900 hover:underline transition-colors px-2">Contact Us</button>
             </div>
 
-            <p class="text-gray-400 text-sm">
+            <p class="text-slate-400 text-xs">
                 © 2024–2025 Spartamax™. All Rights Reserved.
             </p>
         </div>
@@ -259,21 +269,21 @@
 
     <!-- POLICY MODAL CONTAINER -->
     <div id="policyModal" class="fixed inset-0 z-[100] hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-        <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="fixed inset-0 bg-slate-900/80 transition-opacity backdrop-blur-sm" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto">
             <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
-                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-2xl w-full">
-                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 border-b border-gray-100">
+                <div class="relative transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all sm:my-8 sm:w-full sm:max-w-2xl w-full border border-slate-100">
+                    <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 border-b border-slate-100">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-lg md:text-xl font-bold leading-6 text-gray-900" id="modal-title">Policy Information</h3>
-                            <button onclick="closeModal()" type="button" class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none p-2">
-                                <span class="sr-only">Close</span><i class="fas fa-times text-xl"></i>
+                            <h3 class="text-lg md:text-xl font-bold leading-6 text-slate-900" id="modal-title">Policy Information</h3>
+                            <button onclick="closeModal()" type="button" class="rounded-full bg-slate-100 p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-200 focus:outline-none transition-colors">
+                                <span class="sr-only">Close</span><i class="fas fa-times text-lg w-5 h-5 flex items-center justify-center"></i>
                             </button>
                         </div>
                     </div>
-                    <div class="bg-white px-4 py-6 sm:p-6 max-h-[60vh] overflow-y-auto text-sm text-gray-600 leading-relaxed" id="modal-content"></div>
-                    <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                        <button type="button" class="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-3 md:py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto" onclick="closeModal()">Close</button>
+                    <div class="bg-white px-4 py-6 sm:p-8 max-h-[60vh] overflow-y-auto text-sm text-slate-600 leading-relaxed" id="modal-content"></div>
+                    <div class="bg-slate-50 px-4 py-4 sm:flex sm:flex-row-reverse sm:px-6 border-t border-slate-100">
+                        <button type="button" class="mt-3 inline-flex w-full justify-center rounded-xl bg-slate-900 px-6 py-3 text-sm font-bold text-white shadow-sm hover:bg-slate-800 sm:mt-0 sm:w-auto transition-colors" onclick="closeModal()">Close</button>
                     </div>
                 </div>
             </div>
@@ -290,16 +300,16 @@
                 'main-subhead': 'Spartamax™ usa a avançada <strong>Tecnologia Spartan Surge™</strong> para apoiar o fluxo sanguíneo saudável, restaurar sua conexão mente-corpo e aumentar naturalmente a libido — sem pílulas ou efeitos colaterais.',
                 'main-subhead-2': 'Apenas desempenho estável e confiável sempre que importa.',
                 'img-text': '"De desempenho inconsistente e baixa energia para uma intimidade mais forte e confiante."',
-                'how-title': 'Como o Spartamax Funciona — Simples, Seguro e Eficaz',
+                'how-title': 'Como o Spartamax Funciona — <br class="md:hidden"><span class="text-green-600">Simples, Seguro e Eficaz</span>',
                 'li-1': 'Apoia níveis de <strong>óxido nítrico</strong> para ereções mais fortes e duradouras',
                 'li-2': 'Reforça as <strong>vias neurais</strong> para uma resposta de excitação mais rápida',
                 'li-3': 'Ajuda a manter <strong>níveis saudáveis de testosterona</strong> para energia e impulso',
                 'li-4': 'Reduz o estresse que interfere no desempenho',
                 'li-5': '<strong>Goma mastigável diária</strong> — sem pílulas, sem desconforto',
                 'li-6': 'Adequado para homens de 30, 40, 50, 60 anos ou mais',
-                'how-footer': '<i class="fas fa-bolt text-yellow-500 mt-1 mr-2 text-lg"></i> Desenvolvido com Tecnologia Spartan Surge™: ingredientes naturais + ciência moderna.',
+                'how-footer': '<i class="fas fa-bolt text-yellow-500 mr-3 text-xl flex-shrink-0 bg-yellow-100 p-2 rounded-full"></i> <span>Desenvolvido com Tecnologia Spartan Surge™: ingredientes naturais + ciência moderna.</span>',
                 'opt1-badge': 'Escolha Mais Popular',
-                'opt1-discount': 'Ganhe até 38% de Desconto Hoje',
+                'opt1-discount': 'Ganhe até <span class="text-green-600">38% OFF</span> Hoje',
                 'opt1-sub': 'Vá direto para o checkout seguro.',
                 'opt1-desc': 'Ideal para clientes que já confiam no Spartamax™ ou desejam garantir o desconto por tempo limitado antes que o estoque acabe.',
                 'chk-1': 'Desconto aplicado automaticamente',
@@ -307,7 +317,7 @@
                 'chk-3': 'Envio de armazéns locais confiáveis',
                 'chk-4': 'Embalagem discreta e segura',
                 'chk-5': 'Estoque limitado devido à alta demanda',
-                'btn-1-text': 'SIM, QUERO O <br><span class="text-yellow-100">ACORDO DE ATÉ 38% OFF</span>',
+                'btn-1-text': 'SIM, QUERO O <br><span class="text-green-100">ACORDO DE ATÉ 38% OFF</span>',
                 'opt2-badge': 'Precisa de mais informações?',
                 'opt2-title': 'Saiba Mais Antes de Pedir',
                 'opt2-sub': 'Prefere entender tudo primeiro? Veja os detalhes completos.',
@@ -317,8 +327,8 @@
                 'li-opt2-4': 'Nossa Garantia de Reembolso de 365 Dias',
                 'btn-2-text': 'MOSTRAR A PÁGINA<br>COMPLETA DO PRODUTO',
                 'guarantee-title': 'Garantia de Devolução de 365 Dias',
-                'guarantee-text': 'Lembre-se, seu pedido hoje está coberto por uma <span class="font-bold text-gray-900">Garantia Blindada de 365 Dias</span>. Se o Spartamax não atender totalmente às suas expectativas, envie-nos um e-mail a qualquer momento nos próximos 12 meses e devolveremos <span class="underline decoration-yellow-400 decoration-2 underline-offset-2">cada centavo</span>.',
-                'guarantee-note': 'Isso significa que você tem <span class="font-bold">um ano inteiro</span> para testar o Spartamax e ver até onde essa descoberta pode te levar.'
+                'guarantee-text': 'Lembre-se, seu pedido hoje está coberto por uma <span class="font-bold text-slate-900 bg-yellow-100 px-1">Garantia Blindada de 365 Dias</span>. Se o Spartamax não atender totalmente às suas expectativas, envie-nos um e-mail a qualquer momento nos próximos 12 meses e devolveremos <span class="underline decoration-yellow-400 decoration-2 underline-offset-2 font-semibold">cada centavo</span>.',
+                'guarantee-note': '<i class="fas fa-info-circle mr-2"></i> Isso significa que você tem <span class="font-bold">um ano inteiro</span> para testar o Spartamax e ver até onde essa descoberta pode te levar.'
             },
             'es': { // Spanish
                 'trust-bar-text': 'Confiado por más de 64,500 hombres en todo el mundo',
@@ -326,16 +336,16 @@
                 'main-subhead': 'Spartamax™ utiliza la avanzada <strong>Tecnología Spartan Surge™</strong> para apoyar el flujo sanguíneo saludable, restaurar su conexión mente-cuerpo y aumentar naturalmente la libido.',
                 'main-subhead-2': 'Solo rendimiento constante y confiable cuando importa.',
                 'img-text': '"De un rendimiento inconsistente y baja energía a una intimidad más fuerte y segura."',
-                'how-title': 'Cómo funciona Spartamax — Simple, Seguro y Efectivo',
+                'how-title': 'Cómo funciona Spartamax — <br class="md:hidden"><span class="text-green-600">Simple, Seguro y Efectivo</span>',
                 'li-1': 'Apoya los niveles de <strong>óxido nítrico</strong> para erecciones más fuertes',
                 'li-2': 'Refuerza las <strong>vías neuronales</strong> para una respuesta más rápida',
                 'li-3': 'Ayuda a mantener niveles saludables de <strong>testosterona</strong>',
                 'li-4': 'Reduce el estrés que interfiere con el rendimiento',
                 'li-5': '<strong>Gomita masticable diaria</strong> — sin pastillas, sin molestias',
                 'li-6': 'Adecuado para hombres de 30, 40, 50, 60 años y más',
-                'how-footer': '<i class="fas fa-bolt text-yellow-500 mt-1 mr-2 text-lg"></i> Impulsado por Tecnología Spartan Surge™: ingredientes naturales + ciencia moderna.',
+                'how-footer': '<i class="fas fa-bolt text-yellow-500 mr-3 text-xl flex-shrink-0 bg-yellow-100 p-2 rounded-full"></i> <span>Impulsado por Tecnología Spartan Surge™: ingredientes naturales + ciencia moderna.</span>',
                 'opt1-badge': 'Elección Más Popular',
-                'opt1-discount': 'Obtenga hasta 38% de Descuento Hoy',
+                'opt1-discount': 'Obtenga hasta <span class="text-green-600">38% OFF</span> Hoy',
                 'opt1-sub': 'Ir directamente al pago seguro.',
                 'opt1-desc': 'Ideal para clientes que ya confían en Spartamax™ o desean asegurar el descuento antes de que se agote.',
                 'chk-1': 'Descuento aplicado automáticamente',
@@ -343,7 +353,7 @@
                 'chk-3': 'Envío desde almacenes locales confiables',
                 'chk-4': 'Embalaje discreto y seguro',
                 'chk-5': 'Stock limitado debido a la alta demanda',
-                'btn-1-text': 'SÍ, QUIERO LA <br><span class="text-yellow-100">OFERTA DE HASTA 38% OFF</span>',
+                'btn-1-text': 'SÍ, QUIERO LA <br><span class="text-green-100">OFERTA DE HASTA 38% OFF</span>',
                 'opt2-badge': '¿Necesita más información?',
                 'opt2-title': 'Aprenda Más Antes de Ordenar',
                 'opt2-sub': '¿Prefiere entender todo primero? Vea los detalles completos.',
@@ -353,8 +363,8 @@
                 'li-opt2-4': 'Nuestra Garantía de Reembolso de 365 Días',
                 'btn-2-text': 'MOSTRAR LA PÁGINA<br>COMPLETA DEL PRODUCTO',
                 'guarantee-title': 'Garantía de Devolución de 365 Días',
-                'guarantee-text': 'Recuerde, su pedido hoy está cubierto por una <span class="font-bold text-gray-900">Garantía de Hierro de 365 Días</span>. Si Spartamax no cumple totalmente con sus expectativas, envíenos un correo en cualquier momento en los próximos 12 meses y le reembolsaremos <span class="underline decoration-yellow-400 decoration-2 underline-offset-2">cada centavo</span>.',
-                'guarantee-note': 'Esto significa que tiene <span class="font-bold">un año completo</span> para probar Spartamax.'
+                'guarantee-text': 'Recuerde, su pedido hoy está cubierto por una <span class="font-bold text-slate-900 bg-yellow-100 px-1">Garantía de Hierro de 365 Días</span>. Si Spartamax no cumple totalmente con sus expectativas, envíenos un correo en cualquier momento en los próximos 12 meses y le reembolsaremos <span class="underline decoration-yellow-400 decoration-2 underline-offset-2 font-semibold">cada centavo</span>.',
+                'guarantee-note': '<i class="fas fa-info-circle mr-2"></i> Esto significa que tiene <span class="font-bold">un año completo</span> para probar Spartamax.'
             },
             'fr': { // French
                 'trust-bar-text': 'Approuvé par plus de 64 500 hommes dans le monde',
@@ -362,16 +372,16 @@
                 'main-subhead': 'Spartamax™ utilise la technologie avancée <strong>Spartan Surge™</strong> pour soutenir un flux sanguin sain et restaurer votre connexion corps-esprit.',
                 'main-subhead-2': 'Juste une performance fiable à chaque instant important.',
                 'img-text': '"D\'une performance inégale à une intimité plus forte et plus confiante."',
-                'how-title': 'Comment fonctionne Spartamax — Simple, Sûr et Efficace',
+                'how-title': 'Comment fonctionne Spartamax — <br class="md:hidden"><span class="text-green-600">Simple, Sûr et Efficace</span>',
                 'li-1': 'Soutient les niveaux d\'<strong>oxyde nitrique</strong> pour des érections plus fortes',
                 'li-2': 'Renforce les <strong>voies neuronales</strong> pour une réponse rapide',
                 'li-3': 'Aide à maintenir des niveaux sains de <strong>testostérone</strong>',
                 'li-4': 'Réduit le stress qui interfère avec la performance',
                 'li-5': '<strong>Gomme à mâcher quotidienne</strong> — pas de pilules',
                 'li-6': 'Convient aux hommes de 30, 40, 50, 60 ans et plus',
-                'how-footer': '<i class="fas fa-bolt text-yellow-500 mt-1 mr-2 text-lg"></i> Propulsé par la technologie Spartan Surge™ : ingrédients naturels + science moderne.',
+                'how-footer': '<i class="fas fa-bolt text-yellow-500 mr-3 text-xl flex-shrink-0 bg-yellow-100 p-2 rounded-full"></i> <span>Propulsé par la technologie Spartan Surge™ : ingrédients naturels + science moderne.</span>',
                 'opt1-badge': 'Choix le Plus Populaire',
-                'opt1-discount': 'Obtenez jusqu\'à 38% de Réduction',
+                'opt1-discount': 'Obtenez jusqu\'à <span class="text-green-600">38% OFF</span>',
                 'opt1-sub': 'Aller directement au paiement sécurisé.',
                 'opt1-desc': 'Idéal pour ceux qui font déjà confiance à Spartamax™.',
                 'chk-1': 'Remise appliquée automatiquement',
@@ -379,7 +389,7 @@
                 'chk-3': 'Expédition depuis des entrepôts locaux',
                 'chk-4': 'Emballage discret',
                 'chk-5': 'Stock limité en raison de la forte demande',
-                'btn-1-text': 'OUI, JE VEUX L\'<br><span class="text-yellow-100">OFFRE JUSQU\'À -38%</span>',
+                'btn-1-text': 'OUI, JE VEUX L\'<br><span class="text-green-100">OFFRE JUSQU\'À -38%</span>',
                 'opt2-badge': 'Besoin de plus d\'infos ?',
                 'opt2-title': 'En Savoir Plus Avant de Commander',
                 'opt2-sub': 'Préférez-vous tout comprendre d\'abord ?',
@@ -389,8 +399,8 @@
                 'li-opt2-4': 'Garantie de remboursement de 365 jours',
                 'btn-2-text': 'VOIR LA PAGE<br>COMPLÈTE DU PRODUIT',
                 'guarantee-title': 'Garantie de Remboursement de 365 Jours',
-                'guarantee-text': 'Votre commande est couverte par une <span class="font-bold text-gray-900">Garantie de 365 Jours</span>. Si Spartamax ne répond pas à vos attentes, nous vous rembourserons <span class="underline decoration-yellow-400 decoration-2 underline-offset-2">chaque centime</span>.',
-                'guarantee-note': 'Cela signifie que vous avez <span class="font-bold">une année complète</span> pour tester Spartamax.'
+                'guarantee-text': 'Votre commande est couverte par une <span class="font-bold text-slate-900 bg-yellow-100 px-1">Garantie de 365 Jours</span>. Si Spartamax ne répond pas à vos attentes, nous vous rembourserons <span class="underline decoration-yellow-400 decoration-2 underline-offset-2 font-semibold">chaque centime</span>.',
+                'guarantee-note': '<i class="fas fa-info-circle mr-2"></i> Cela signifie que vous avez <span class="font-bold">une année complète</span> pour tester Spartamax.'
             },
             'de': { // German
                 'trust-bar-text': 'Vertraut von über 64.500 Männern weltweit',
@@ -398,16 +408,16 @@
                 'main-subhead': 'Spartamax™ verwendet die fortschrittliche <strong>Spartan Surge™ Technologie</strong>, um eine gesunde Durchblutung zu unterstützen und Ihre Geist-Körper-Verbindung wiederherzustellen.',
                 'main-subhead-2': 'Zuverlässige Leistung, wann immer es darauf ankommt.',
                 'img-text': '"Von unbeständiger Leistung zu stärkerer, selbstbewussterer Intimität."',
-                'how-title': 'Wie Spartamax funktioniert — Einfach, Sicher und Effektiv',
+                'how-title': 'Wie Spartamax funktioniert — <br class="md:hidden"><span class="text-green-600">Einfach, Sicher und Effektiv</span>',
                 'li-1': 'Unterstützt den <strong>Stickoxidspiegel</strong> für stärkere Erektionen',
                 'li-2': 'Verstärkt die <strong>neuronalen Bahnen</strong> für schnellere Erregung',
                 'li-3': 'Hilft, einen gesunden <strong>Testosteronspiegel</strong> zu erhalten',
                 'li-4': 'Reduziert Stress, der die Leistung beeinträchtigt',
                 'li-5': '<strong>Tägliches Kaugummi</strong> — keine Pillen',
                 'li-6': 'Geeignet für Männer in den 30ern, 40ern, 50ern, 60ern und darüber hinaus',
-                'how-footer': '<i class="fas fa-bolt text-yellow-500 mt-1 mr-2 text-lg"></i> Angetrieben von Spartan Surge™ Technologie.',
+                'how-footer': '<i class="fas fa-bolt text-yellow-500 mr-3 text-xl flex-shrink-0 bg-yellow-100 p-2 rounded-full"></i> <span>Angetrieben von Spartan Surge™ Technologie.</span>',
                 'opt1-badge': 'Beliebteste Wahl',
-                'opt1-discount': 'Erhalten Sie heute bis zu 38% Rabatt',
+                'opt1-discount': 'Erhalten Sie heute bis zu <span class="text-green-600">38% OFF</span>',
                 'opt1-sub': 'Direkt zur sicheren Kasse gehen.',
                 'opt1-desc': 'Ideal für Kunden, die Spartamax™ bereits vertrauen.',
                 'chk-1': 'Rabatt automatisch angewendet',
@@ -415,7 +425,7 @@
                 'chk-3': 'Versand aus lokalen Lagern',
                 'chk-4': 'Diskrete Verpackung',
                 'chk-5': 'Begrenzter Vorrat aufgrund hoher Nachfrage',
-                'btn-1-text': 'JA, ICH WILL DEN <br><span class="text-yellow-100">BIS ZU 38% RABATT DEAL</span>',
+                'btn-1-text': 'JA, ICH WILL DEN <br><span class="text-green-100">BIS ZU 38% RABATT DEAL</span>',
                 'opt2-badge': 'Benötigen Sie weitere Informationen?',
                 'opt2-title': 'Mehr erfahren vor der Bestellung',
                 'opt2-sub': 'Möchten Sie zuerst alles verstehen?',
@@ -425,8 +435,8 @@
                 'li-opt2-4': 'Unsere 365-Tage-Geld-zurück-Garantie',
                 'btn-2-text': 'ZEIGE MIR DIE<br>VOLLSTÄNDIGE PRODUKTSEITE',
                 'guarantee-title': '365-Tage Geld-zurück-Garantie',
-                'guarantee-text': 'Ihre Bestellung ist durch eine <span class="font-bold text-gray-900">365-Tage-Garantie</span> abgedeckt. Wenn Spartamax Ihre Erwartungen nicht erfüllt, erstatten wir Ihnen <span class="underline decoration-yellow-400 decoration-2 underline-offset-2">jeden einzelnen Cent</span>.',
-                'guarantee-note': 'Das bedeutet, Sie haben <span class="font-bold">ein ganzes Jahr</span> Zeit, Spartamax zu testen.'
+                'guarantee-text': 'Ihre Bestellung ist durch eine <span class="font-bold text-slate-900 bg-yellow-100 px-1">365-Tage-Garantie</span> abgedeckt. Wenn Spartamax Ihre Erwartungen nicht erfüllt, erstatten wir Ihnen <span class="underline decoration-yellow-400 decoration-2 underline-offset-2 font-semibold">jeden einzelnen Cent</span>.',
+                'guarantee-note': '<i class="fas fa-info-circle mr-2"></i> Das bedeutet, Sie haben <span class="font-bold">ein ganzes Jahr</span> Zeit, Spartamax zu testen.'
             }
         };
 
@@ -468,10 +478,10 @@
         // --- 2. MODAL & CONTENT LOGIC (Original) ---
         const contentData = {
             shipping: `
-                <h2 class="text-lg font-bold text-gray-900 mb-4">Shipping & Return Policy</h2>
-                <h4 class="font-bold mt-4">Shipping Details and Tracking:</h4>
+                <h2 class="text-lg font-bold text-slate-900 mb-4">Shipping & Return Policy</h2>
+                <h4 class="font-bold mt-4 text-slate-800">Shipping Details and Tracking:</h4>
                 <p class="mb-2">We ship anywhere in the world using USPS, UPS and other courier services. We select the courier that will best be able to fulfill your order the fastest depending on where you live, and keep you up-to-date on its status via email updates. Below are the steps taken to prepare for shipment and delivery. Your purchase price includes the shipping costs.</p>
-                <p class="mb-2 italic">Please Note: We ship SpartaMax out of Colorado, coming from ShipOffers.</p>
+                <p class="mb-2 italic text-slate-600">Please Note: We ship SpartaMax out of Colorado, coming from ShipOffers.</p>
                 <ul class="list-disc pl-5 mb-4 space-y-1">
                     <li>Orders are received, confirmed and prepped for shipping, the package is scanned, and shipping labels are applied. (3-5 business days)</li>
                     <li>Products are mailed according to your preferred shipping method. Shipping confirmation emails are sent to recipients with tracking information.(1 business day)</li>
@@ -479,13 +489,13 @@
                     <li>Product is shipped and delivered to you. (5-7 business days)</li>
                 </ul>
                 <p class="mb-4"><strong>International orders (outside US)</strong> are processed (subject to stock availability) within 3 to 7 business days. Our shipping duration normally takes between 12 to 18 business days, depending on which country you reside in. Factors such as shipping disruptions, decreased flight hours, conditions of the destination country, delayed logistics and customs clearings may have an impact on the delivery time. Rest assured that we are trying our best to deliver your order as soon as possible. We thank you for your patience and kind understanding during this period.</p>
-                <hr class="my-6 border-gray-200">
-                <h2 class="text-lg font-bold text-gray-900 mb-4">Refund Policy & Instructions</h2>
+                <hr class="my-6 border-slate-200">
+                <h2 class="text-lg font-bold text-slate-900 mb-4">Refund Policy & Instructions</h2>
                 <p class="mb-2">To be eligible for a return, you must first send an email to <strong class="text-blue-600">support@GetSpartaMax.com</strong> to inform us about your intention to return an item. Your item must be unused and unopened in the same condition that you received it. Your returned item must be in the original packaging, preferably with your invoice.</p>
-                <h4 class="font-bold mt-4">Refund Instructions:</h4>
+                <h4 class="font-bold mt-4 text-slate-800">Refund Instructions:</h4>
                 <p class="mb-2">If you'd like a refund, please send any unopened bottles to the address below. Please include your invoice so that we know who to refund once we receive your shipment. Please allow 5-7 days for it to arrive at our facility and for us to process your refund.</p>
-                <div class="bg-gray-100 p-4 rounded-lg mt-4 text-gray-800">
-                    <p class="font-bold">Return Address:</p>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg mt-4 text-slate-700">
+                    <p class="font-bold text-slate-900">Return Address:</p>
                     <p>Returns Department</p>
                     <p>c/o SpartaMax</p>
                     <p>19655 E 35th Dr #100</p>
@@ -494,7 +504,7 @@
                 </div>
             `,
             terms: `
-                <h2 class="text-lg font-bold text-gray-900 mb-4">Terms and Conditions</h2>
+                <h2 class="text-lg font-bold text-slate-900 mb-4">Terms and Conditions</h2>
                 <p class="mb-3"><strong>(1) Introduction:</strong> These terms and conditions govern your use of our website; by using our website, you accept these terms and conditions in full. If you disagree with any part of these terms and conditions, do not use our website.</p>
                 <p class="mb-3"><strong>(2) Intellectual property rights:</strong> Unless otherwise stated, we or our licensors own the intellectual property rights in the website and material on the website. Subject to the license below, all our intellectual property rights are reserved.</p>
                 <p class="mb-3"><strong>(3) License to use website:</strong> You may view, download for caching purposes only, and print pages from the website, provided that:</p>
@@ -516,13 +526,13 @@
                 </ul>
             `,
             privacy: `
-                <h2 class="text-lg font-bold text-gray-900 mb-2">Privacy Policy</h2>
-                <p class="text-xs text-gray-500 mb-4">Last updated: April 14, 2025</p>
+                <h2 class="text-lg font-bold text-slate-900 mb-2">Privacy Policy</h2>
+                <p class="text-xs text-slate-500 mb-4">Last updated: April 14, 2025</p>
                 <p class="mb-3">"I" and "we" and "our service" or "service" refers to the website: https://GetSpartaMax.com. This page informs you of our policies regarding the collection, use and disclosure of Personal Information when you use our Service.</p>
-                <h4 class="font-bold mt-4 mb-2">Information Collection And Use</h4>
+                <h4 class="font-bold mt-4 mb-2 text-slate-800">Information Collection And Use</h4>
                 <p class="mb-2">While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information (“Personal Information”) may include, but is not limited to: Name, Email address, Telephone number, Address, Payment Information.</p>
-                <p class="mb-2 text-sm italic">When you make a purchase, your payment information is processed by DigiStore24. We do not store or have access to your payment details.</p>
-                <h4 class="font-bold mt-4 mb-2">Cookies</h4>
+                <p class="mb-2 text-sm italic text-slate-600">When you make a purchase, your payment information is processed by DigiStore24. We do not store or have access to your payment details.</p>
+                <h4 class="font-bold mt-4 mb-2 text-slate-800">Cookies</h4>
                 <p class="mb-2">We use cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, and personalize content. By using our website, you consent to our use of cookies in accordance with this Privacy Policy.</p>
                 <ul class="list-disc pl-5 mb-2 space-y-1">
                     <li><strong>Essential Cookies:</strong> Required for basic site functionality.</li>
@@ -530,27 +540,27 @@
                     <li><strong>Marketing Cookies:</strong> Used to deliver relevant ads.</li>
                 </ul>
                 <p class="mb-2">You can manage or disable cookies through your browser settings.</p>
-                <h4 class="font-bold mt-4 mb-2">Service Providers</h4>
+                <h4 class="font-bold mt-4 mb-2 text-slate-800">Service Providers</h4>
                 <p class="mb-2">We may employ third party companies and individuals to facilitate our Service, to provide the Service on our behalf, to perform Service-related services or to assist us in analyzing how our Service is used.</p>
-                <h4 class="font-bold mt-4 mb-2">Children’s Privacy</h4>
+                <h4 class="font-bold mt-4 mb-2 text-slate-800">Children’s Privacy</h4>
                 <p class="mb-2">Our Service does not address anyone under the age of 18 (“Children”). We do not knowingly collect personally identifiable information from children under 18.</p>
-                <h4 class="font-bold mt-4 mb-2">Contact Us</h4>
+                <h4 class="font-bold mt-4 mb-2 text-slate-800">Contact Us</h4>
                 <p class="mb-2">If you have any questions about this Privacy Policy, please contact us at <strong class="text-blue-600">support@GetSpartaMax.com</strong>.</p>
             `,
             contact: `
-                <h2 class="text-lg font-bold text-gray-900 mb-4">Contact Us</h2>
+                <h2 class="text-lg font-bold text-slate-900 mb-4">Contact Us</h2>
                 <p class="mb-4">We are here to help! You can reach our support team via email or mail.</p>
                 <div class="bg-blue-50 border border-blue-100 rounded-lg p-6 mb-6">
                     <h4 class="font-bold text-blue-900 mb-2"><i class="fas fa-envelope mr-2"></i> Email Support</h4>
                     <p class="text-blue-800">For general inquiries, returns, or support:</p>
                     <a href="mailto:support@GetSpartaMax.com" class="text-lg font-bold text-blue-600 hover:underline">support@GetSpartaMax.com</a>
                 </div>
-                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
-                    <h4 class="font-bold text-gray-900 mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Mailing Address</h4>
-                    <p class="text-gray-600">Spartamax Returns Department</p>
-                    <p class="text-gray-600">19655 E 35th Dr #100</p>
-                    <p class="text-gray-600">Aurora, CO 80011</p>
-                    <p class="text-gray-600">United States of America</p>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-6">
+                    <h4 class="font-bold text-slate-900 mb-2"><i class="fas fa-map-marker-alt mr-2"></i> Mailing Address</h4>
+                    <p class="text-slate-600">Spartamax Returns Department</p>
+                    <p class="text-slate-600">19655 E 35th Dr #100</p>
+                    <p class="text-slate-600">Aurora, CO 80011</p>
+                    <p class="text-slate-600">United States of America</p>
                 </div>
             `
         };
